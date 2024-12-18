@@ -38,6 +38,12 @@ return [
     '/changePicture' =>[UserController::class, 'changePicture'],
     '/sample-api-request' =>[HomeController::class, 'sampleApiRequest'],
     
+    $router->get('/library/books', 'LibraryController@getBooks');
+    $router->post('/library/books', 'LibraryController@addBook');
+    $router->get('/library/members', 'LibraryController@getMembers');
+    $router->post('/library/members', 'LibraryController@addMember');
+    $router->get('/library/loans', 'LibraryController@getLoans');
+    $router->post('/library/loans', 'LibraryController@issueLoan');
 
     //Api routes
     '/api/users' => [ApiController::class,'users'],
